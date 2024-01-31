@@ -1,19 +1,23 @@
 <template>
  <div>
-  <feedback-form/>
+  <feedback-form/> 
+<!-- <hello-world/> -->
   
  </div>
  
 </template>
 
 <script>
+// import HelloWorld from './components/HelloWorld.vue'
 
 import FeedbackForm from './components/FeedbackForm.vue'
+
 
 export default {
   name: 'App',
   components: {
     FeedbackForm,
+    // HelloWorld
     
   }
 }

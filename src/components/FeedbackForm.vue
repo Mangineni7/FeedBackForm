@@ -31,7 +31,7 @@
                 value="true"
                 id="yes"
                 v-model="check"
-                 @change="handleSubmittion()"
+                 @change="handleInput()"
               />
               <label for="yes" class="field-label" >Yes</label>
               <input
@@ -40,7 +40,7 @@
                 value="false"
                 id="no"
                 v-model="check"
-                @change="handleSubmittion()"
+                @change="handleInput()"
               />
               <label for="no" class="field-label">No</label>
             </div>
@@ -88,7 +88,7 @@
               class="submit-button "
               id="submit-button"
               type="submit"
-              :disabled="isDisable"
+              :disabled="isDisabled"
 
             >
               Submit
@@ -111,7 +111,7 @@ export default{
       phone:"",
       check:null,
       value:false,
-      isDisable:true,
+      isDisabled:true,
       afterSubmition:true
         }
     },
@@ -154,10 +154,11 @@ export default{
       this.handleInput()
      },
       handleInput(){
-        this.isDisable =
-      this.name.trim() === "" ||  this.phone.trim() === "" ||  this.check===null ||  this.rating === 0;
-      }
+         if(this.name.trim()!=="" && this.phone.length===10 && this.check !==null && this.rating!==0){
+              this.isDisabled=false
+            }
   },
+    }
 
 }
 </script>
